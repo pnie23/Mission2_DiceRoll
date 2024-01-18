@@ -30,8 +30,9 @@ internal class Program
         //iterate through and perform output calculation
         for (int i = 0; i < DiceResult.Length; i++)
         {
-            int percentage = (int)DiceResult[i] * 100 / numberOfRolls;
-            string asterisks = new string('*', percentage);
+            //math for 1% of the total rolls as asterisks
+            int astPercent = (int)(DiceResult[i] * (100.0 / numberOfRolls));
+            string asterisks = new string('*', astPercent);
             System.Console.WriteLine($"{i + 2}: {asterisks}");
         }
 
